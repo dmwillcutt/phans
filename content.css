@@ -1,0 +1,399 @@
+/*
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+@font-face {
+    font-family: 'montserratlight';
+    src: url('fonts/montserrat-light-webfont.eot');
+    src: url('fonts/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
+    	 url('fonts/montserrat-light-webfont.woff') format('woff'),
+    	 url('fonts/montserrat-light-webfont.ttf') format('truetype'),
+    	 url('fonts/montserrat-light-webfont.svg#montserratlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/Montserrat-Regular-webfont.eot');
+    src: url('fonts/Montserrat-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    	 url('fonts/Montserrat-Regular-webfont.woff') format('woff'),
+    	 url('fonts/Montserrat-Regular-webfont.ttf') format('truetype'),
+    	 url('fonts/Montserrat-Regular-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('fonts/Montserrat-Bold.eot');
+    src: url('fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+    	 /*url('fonts/Montserrat-Bold.woff') format('woff'),*/
+    	 url('fonts/Montserrat-Bold.ttf') format('truetype'),
+    	 url('fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+    font-weight: bold;
+}
+body
+{
+    /* Remove the background color to make it transparent */
+    background-color: #fff;
+    color: #18233E;
+    font-family: montserratlight, sans-serif;
+    font-size: 0.875em;
+    font-weight: 300;
+    margin: 20px;
+}
+
+/* Override default editor styling */
+.cke_editable .ptr,
+.cke_editable .sup {
+  font-size: 12px;
+  position: relative;
+  top: -.4em;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.cke_editable h1,
+.cke_editable h2 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.cke_editable h1 {
+  font-size: 28px;
+}
+
+.cke_editable h2 {
+  color: #2f5496;
+  font-size: 20px;
+}
+
+.cke_editable p,
+.cke_editable p span,
+.cke_editable li,
+.cke_editable li span {
+  color: #000;
+  font-family: "montserratlight", "sans-serif";
+  font-size: 12pt;
+  line-height: 28px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.cke_editable a {
+  color: #0066CC;
+}
+
+.cke_editable a:hover {
+  text-decoration: underline;
+}
+
+.cke_editable {
+	font-size: 16px;
+  line-height: 2;
+  margin: 0 7%;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+	margin: -2px 0px -2px 0px;
+}
+
+blockquote
+{
+	font-style: italic;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	padding: 2px 0;
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 0;
+}
+
+.cke_contents_ltr blockquote
+{
+	padding-left: 20px;
+	padding-right: 8px;
+	border-left-width: 5px;
+}
+
+.cke_contents_rtl blockquote
+{
+	padding-left: 8px;
+	padding-right: 20px;
+	border-right-width: 5px;
+}
+
+a
+{
+	color: #0782C1;
+	cursor: pointer;
+}
+
+sup {
+	cursor: pointer;
+}
+
+ol,ul,dl
+{
+	/* IE7: reset rtl list margin. (#7334) */
+	*margin-right: 0px;
+	/* preserved spaces for list items with text direction other than the list. (#6249,#8049)*/
+	padding: 0 40px;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+hr
+{
+	border: 0px;
+	border-top: 1px solid #ccc;
+}
+
+img.right
+{
+	border: 1px solid #ccc;
+	float: right;
+	margin-left: 15px;
+	padding: 5px;
+}
+
+img.left
+{
+	border: 1px solid #ccc;
+	float: left;
+	margin-right: 15px;
+	padding: 5px;
+}
+
+pre
+{
+	white-space: pre-wrap; /* CSS 2.1 */
+	word-wrap: break-word; /* IE7 */
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+.marker
+{
+	background-color: #2b579a;
+}
+
+span[lang]
+{
+	font-style: italic;
+}
+
+figure
+{
+	text-align: center;
+	border: solid 1px #ccc;
+	border-radius: 2px;
+	background: rgba(0,0,0,0.05);
+	padding: 10px;
+	margin: 10px 20px;
+	display: inline-block;
+}
+
+figure > figcaption
+{
+	text-align: center;
+	display: block; /* For IE8 */
+}
+
+a > img {
+	padding: 1px;
+	margin: 1px;
+	border: none;
+	outline: 1px solid #0782C1;
+}
+
+/* Color of highlighted text linked to inline comment */
+.highlight {
+    background: #B0E7FF;
+}
+
+.highlight.public-relevance {
+    background: rgba(56, 120, 192, 0.25);
+}
+
+.highlight.non-expert-accessibility {
+    background: rgba(0, 161, 130, 0.25);
+}
+
+.highlight.accessibility {
+    background-color: rgba(245,166,35,0.25);
+    border: 1px solid #F5A623 !important;
+}
+
+.highlight.relevance {
+    background-color: rgba(0,161,130,0.25);
+    border: 1px solid #44CCB2 !important;
+}
+
+.highlight.intellectual-coherence {
+    background-color: rgba(56,120,192,0.25);
+    border: 1px solid #3878C0 !important;
+}
+
+.highlight.scholarly-dialogue {
+    background-color: rgba(131,82,175,0.25);
+    border: 1px solid #8352AF !important;
+}
+
+.highlight.other {
+    background-color: rgba(224,85,85,0.25);
+    border: 1px solid #FD8686 !important;
+}
+
+
+/* Footnotes */
+
+.footnotes {
+    font-family: montserratlight, sans-serif;
+    font-weight: 300;
+}
+
+.footnotes ol {
+    padding: 0 0.75em;
+}
+
+.footnotes ol li {
+    font-size: 0.75em;
+    margin-bottom: 1.25em;
+}
+
+.footnotes ol li cite {
+    font-style: normal;
+}
+
+.foot {
+    font-family: montserratlight, sans-serif;
+}
+
+.articleImg img{
+    width: 100% !important;
+}
+
+.articleImg{
+    width: 100% !important;
+    object-fit: contain;
+}
+
+
+/*Pages*/
+
+/*Main*/
+.main {
+    font-family: montserratlight, sans-serif;
+    font-weight: 300;
+    position: relative;
+}
+
+.block::selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block::-moz-selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block::-webkit-keygen-select {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block em::selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block em::-moz-selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block em::-webkit-keygen-select {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block strong::selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block strong::-moz-selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.block strong::-webkit-keygen-select {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.foot::selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.foot::-moz-selection {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.foot::-webkit-keygen-select {
+	outline: 1px solid #A7C2D8;
+	background-color: rgba(167, 194, 216, 0.25);
+}
+
+.main .Title {
+  font-size: 32px;
+  display: block;
+}
+
+.main .nonFoot {
+  display: block;
+  font-size: 14px;
+}
+
+/*Pagination*/
+.relative {
+  display: none;
+
+}
+
+.pagination .increment {
+  display: none;
+
+
+}
+
+.pagination .pagBody {
+  position: relative;
+}
+
+.pageNums {
+  display: none;
+
+}
+
+.pageSelect {
+  display: none;
+
+}
+
+.ArrowBox {
+  display: none;
+
+}
+
+
+
