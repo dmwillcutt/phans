@@ -1,0 +1,592 @@
+/************************************
+	Developmental Editor Comments
+************************************/
+
+
+/**** Prevent changes to document ****/
+.content {
+	pointer-events: none;
+}
+/*************************************/
+
+/**** Comment Box Container ****/
+.gci {
+	cursor: pointer;
+	direction: ltr;
+	position: relative;
+}
+
+.gci-dock {
+    float: right;
+}
+
+/**** End Comment Box Container ****/
+
+
+/**** Comment Boxes ****/
+.anchor-author, .anchor-timestamp {
+	display: none;
+}
+
+.anchor {
+    border-radius: 100%;
+    cursor: pointer;
+    direction: ltr;
+    height: 26px;
+    margin-left: .8em;
+    pointer-events: all;
+    position: absolute;
+    width: 26px;
+}
+
+@media (min-width: 28em) {
+    .anchor {
+        margin-left: 1.5em;
+    }
+}
+
+.anchor.public {
+    background-color: rgba(56,120,192,0.25);
+    border: 1px solid #0066CC;
+}
+
+.anchor.non-expert {
+    background-color: rgba(0,161,130,0.25);
+    border: 1px solid #44CCB2;
+}
+
+.anchor.public:hover, .anchor.public.active-anchor {
+    background-color: rgba(56,120,192,0.75);
+    border: 1px solid #0066CC;
+}
+
+.anchor.non-expert:hover, .anchor.non-expert.active-anchor{
+    background-color: rgba(0,161,130,0.75);
+    border: 1px solid #44CCB2;
+}
+
+.anchor.accessibility {
+    border: 1px solid #F5A623;
+    background-color: rgba(245,166,35,0.25);
+}
+
+.anchor.relevance {
+    border: 1px solid #44CCB2;
+    background-color: rgba(0,161,130,0.25);
+}
+
+.anchor.intellectual-coherence {
+    border: 1px solid #0066CC;
+    background-color: rgba(56,120,192,0.25);
+}
+
+.anchor.scholarly-dialogue {
+    border: 1px solid #8352AF;
+    background-color: rgba(131,82,175,0.25);
+}
+
+.anchor.other {
+    border: 1px solid #FD8686;
+    background-color: rgba(224,85,85,0.25);
+}
+
+.active-anchor {
+	box-shadow: none;
+	z-index: 1;
+}
+
+.anchor-internal {
+	position: relative;
+	padding-top: 5px;
+}
+
+.comment-number {
+	color: #18233E;
+	text-align: center;
+	max-height: 162px;
+	overflow-y: auto;
+	font-size: 14px;
+}
+
+.accepted, .declined {
+	display: none;
+}
+
+/**** End comment boxes ****/
+
+
+/**** Add Comment button ****/
+.addCommentButtonContainer {
+    margin-left: 5.5em;
+    min-width: 9em;
+    position: absolute;
+}
+
+.addCommentButton {
+	background-color: rgba(56,120,192,0.8);
+	border: 1px solid #3878c0;
+	border-radius: 100%;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	height: 26px !important;
+	position: relative;
+	pointer-events: all;
+	vertical-align: middle;
+	width: 26px !important;
+}
+
+.addCommentButton span {
+	height: 0.5625em;
+	left: 33%;
+	line-height: 1.75;
+	position: absolute;
+	width: 0.5625em;
+}
+
+.addCommentButtonLabel {
+	color: #3878c0;
+	display: inline;
+	font-size: small;
+}
+
+/**** End create comment button ****/
+
+/**** Add Review Comment Detail View ****/
+.reviewComments {
+    font-family: montserratlight, sans-serif;
+    position: relative;
+    width: 100%;
+}
+
+.reviewComment {
+    background-color: #FFFFFF;
+    border: 1px solid #C5C8CF;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.03);
+    display: block;
+    /*float: left;*/
+    font-weight: 300;
+    margin-bottom: 2em;
+    position: relative;
+    width: 100%;
+}
+
+.reviewComment .reviewCommentDetail {
+    margin: 2.25em;
+}
+
+.reviewComment .reviewCommentButton {
+    border-radius: 100%;
+    cursor: pointer;
+    direction: ltr;
+    float: right;
+    height: 26px;
+    pointer-events: all;
+    position: relative;
+    right: -2.5em;
+    width: 26px;
+}
+
+@media (min-width: 28em) {
+    .reviewComment .reviewCommentButton {
+        right: -3.3125em;
+    }
+}
+
+.reviewComment .reviewCommentButton .reviewCommentNumber {
+    color: #18233E;
+    font-size: 14px;
+    max-height: 162px;
+    overflow-y: auto;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.reviewComment.public-relevance .reviewCommentButton {
+    background-color: #CDDDEF;
+    border: 1px solid #3878c0;
+}
+
+.reviewComment.non-expert-accessibility .reviewCommentButton {
+    background-color: rgba(0, 161, 130, 0.25);
+    border: 1px solid #44CCB2;
+}
+
+.reviewComment.accessibility .reviewCommentButton {
+    background-color: rgba(245, 166, 35, 0.25);
+    border: 1px solid #F5A623;
+}
+
+.reviewComment.relevance .reviewCommentButton {
+    background-color: rgba(0, 161, 130, 0.25);
+    border: 1px solid #44CCB2;
+}
+
+.reviewComment.intellectual-coherence .reviewCommentButton {
+    background-color: rgba(56, 120, 192, 0.25);
+    border: 1px solid #3878c0;
+}
+
+.reviewComment.scholarly-dialogue .reviewCommentButton {
+    background-color: rgba(131, 82, 175, 0.25);
+    border: 1px solid #8352AF;
+}
+
+.reviewComment.other .reviewCommentButton {
+    background-color: rgba(224, 85, 85, 0.25);
+    border: 1px solid #FD8686;
+}
+
+.reviewComment .reviewCommentDetail .selection {
+    color: #18233E;
+    display: table;
+    font-size: 0.875em;
+}
+
+.reviewComment.public-relevance .reviewCommentDetail .selection {
+    background-color: #CDDDEF;
+    border: 1px solid #3878c0;
+}
+
+.reviewComment.non-expert-accessibility .reviewCommentDetail .selection {
+    background-color: rgba(0, 161, 130, 0.25);
+    border: 1px solid #44CCB2;
+}
+
+.reviewComment.accessibility .reviewCommentDetail .selection {
+    background-color: rgba(245, 166, 35, 0.25);
+    border: 1px solid #F5A623;
+}
+
+.reviewComment.relevance .reviewCommentDetail .selection {
+    background-color: rgba(0, 161, 130, 0.25);
+    border: 1px solid #44CCB2;
+}
+
+.reviewComment.intellectual-coherence .reviewCommentDetail .selection {
+    background-color: rgba(56, 120, 192, 0.25);
+    border: 1px solid #3878c0;
+}
+
+.reviewComment.scholarly-dialogue .reviewCommentDetail .selection {
+    background-color: rgba(131, 82, 175, 0.25);
+    border: 1px solid #8352AF;
+}
+
+.reviewComment.other .reviewCommentDetail .selection {
+    background-color: rgba(224, 85, 85, 0.25);
+    border: 1px solid #FD8686;
+}
+
+.reviewComment .reviewCommentDetail textarea {
+    background: #ffffff;
+    border: 1px solid #A7C2D8;
+    font-size: 12px;
+    padding: 2em;
+    resize: none;
+}
+
+.reviewComment .reviewCommentDetail textarea:hover,
+.reviewComment .reviewCommentDetail textarea:focus {
+    border: 1px solid #0066CC;
+}
+
+.reviewComment .reviewCommentDetail textarea::-webkit-input-placeholder {
+    color: #18233E;
+    font-weight: 300;
+}
+
+.reviewComment .reviewCommentDetail textarea:-moz-placeholder {
+    color: #18233E;
+    font-weight: 300;
+}
+
+.reviewComment .reviewCommentDetail textarea::-moz-placeholder {
+    color: #18233E;
+    font-weight: 300;
+}
+
+.reviewComment .reviewCommentDetail textarea:-ms-input-placeholder {
+    color: #18233E;
+    font-weight: 300;
+}
+
+.reviewComment .reviewCommentDetail .reviewCommentResponsePrompts {
+    color: #18233E;
+}
+
+.reviewComment .reviewCommentDetail .reviewCommentResponsePrompts h3 {
+    font-size: 0.875em;
+}
+
+.reviewComment .reviewCommentDetail .reviewCommentResponsePrompts h5 {
+    font-size: 0.75em;
+}
+
+.reviewCommentUpdater {
+    background-color: #3878c0;
+    border-radius: 100px;
+    box-shadow: 0 5px 20px 0 rgba(56, 120, 192, 0.24);
+    color: #ffffff;
+    cursor: pointer;
+    display: table;
+    float: left;
+    font-size: 0.75em;
+    height: 4em;
+    text-align: center;
+    width: 100%;
+}
+
+.reviewCommentUpdater:hover {
+    background-color: #0066CC;
+}
+
+.reviewCommentUpdater:hover span {
+    text-decoration: underline;
+}
+
+.reviewCommentUpdater span {
+    line-height: 3.75em;
+}
+
+.reviewCommentRemover {
+    color: #E05555;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+}
+
+.reviewCommentRemover:hover {
+    text-decoration: underline;
+}
+
+.reviewCommentActions {
+    margin-top: 2em;
+    min-height: 5em;
+}
+
+.reviewCommentActions div:last-child {
+    margin-top: 2em;
+}
+
+@media (min-width: 42.8125em) {
+    .reviewComments .reviewCommentUpdater {
+        width: 22em;
+    }
+
+    .reviewComments .reviewCommentRemover {
+        width: auto;
+    }
+
+    .reviewComments .reviewCommentActions {
+        margin-top: 1em;
+        min-height: 3em;
+    }
+
+    .reviewComments .reviewCommentActions div:last-child {
+        margin-top: 1em;
+    }
+}
+
+/**** End create comment button ****/
+
+/**** Create comment textarea ****/
+.input-textarea {
+	display: none;
+	border: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: #000;
+	font-family: Arial,sans-serif;
+	font-size: 13px;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: visible;
+	outline-width: 0 !important;
+	padding: 8px;
+	resize: vertical;
+	width: 100%;
+	height: 162px;
+	background: #E6F6FF;
+	font-family: 'montserratregular';
+}
+/**** End create comment textarea ****/
+
+
+/**** Custom Scrollbar ****/
+#testComment_content::-webkit-scrollbar,
+.TestCommentEdit_box::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+#testComment_content::-webkit-scrollbar-track,
+.TestCommentEdit_box::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+    border: 1px solid rgba(0,0,0,0.2);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+#testComment_content::-webkit-scrollbar-thumb,
+.TestCommentEdit_box::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(24, 35, 62, .3);
+}
+#testComment_content::-webkit-scrollbar-thumb:window-inactive,
+.TestCommentEdit_box::-webkit-scrollbar-thumb:window-inactive,
+textarea::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
+}
+/**** End Custom Scrollbar ****/
+
+
+/**** Edit Comment textarea ****/
+textarea {
+	border-radius:0px; -webkit-border-radius:0px; -moz-border-radius:0px;
+	border: 1px solid #ACC7DD;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	color: #000;
+	font-family: Arial,sans-serif;
+	font-size: 13px;
+	margin: 0;
+	overflow-y: auto;
+	resize: vertical;
+	outline-width: 0 !important;
+	padding: 8px;
+	width: 100%;
+	height: auto;
+	background: #E6F6FF;
+	font-family: 'montserratregular';
+}
+/**** End edit comment textarea ****/
+
+
+/**** Comment popup buttons ****/
+div.accept-comment-button span,
+div.accepted-comment-button span,
+div.decline-comment-button span,
+div.declined-comment-button span {
+	cursor: pointer;
+	float: right;
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+
+div.accept-comment-button span,
+div.accepted-comment-button span {
+	color: #1B3151;
+}
+
+div.decline-comment-button span {
+	color: #FF8888;
+	left: 135px;
+}
+
+div.declined-comment-button span {
+	color: #FF8888;
+	left: 115px;
+}
+
+div.edit-comment-button span,
+div.delete-comment-button span,
+div.confirm-edit-button span,
+div.cancel-edit-button span {
+	cursor: pointer;
+	float: right;
+	position: absolute;
+	text-transform: uppercase;
+}
+
+div.edit-comment-button span {
+	color: #1B3151;
+}
+
+div.delete-comment-button span {
+	color: #FF8888;
+	left: 80px;
+}
+
+div.confirm-edit-button span {
+	color: #1B3151;
+	padding-top: 3px;
+}
+
+div.cancel-edit-button span {
+	color: #FF8888;
+	left: 120px;
+	padding-top: 3px;
+}
+/**** End comment popup buttons ****/
+
+
+/**** Comment Popup ****/
+.testComment_box {
+	display: none;
+	position: absolute;
+    width: 500px;
+	left: 30%;
+	z-index: 1;
+}
+
+div.testComment {
+	min-height: 160px;
+}
+
+#testComment_header.modalHeading {
+	cursor: move;
+	width: 450px;
+}
+
+#testComment_content {
+	margin-top: 47px;
+	font-size: 14px;
+	resize: vertical;
+	overflow-y: auto;
+	min-height: 50px;
+	max-height: 350px;
+}
+
+.testComment_box .modalCont {
+	margin-top: 0px;
+	height: inherit;
+	width: auto;
+	overflow: auto;
+	border: 1px solid rgba(24, 35, 62, .3);
+}
+
+.testComment_box .closer {
+	margin-right: -37px;
+	height: 58px;
+	width: 58px;
+	border: 1px solid #1B3151;
+}
+
+div.TestCommentEdit_box {
+	height: inherit;
+	min-height: 160px;
+}
+/**** End comment popup ****/
+
+
+/**** Other Popups ****/
+.modalCont {
+	padding: 25px;
+	margin-top: 35px;
+	background: #ffffff;
+}
+/**** End other popups ****/
