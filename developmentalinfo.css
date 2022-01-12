@@ -1,0 +1,521 @@
+
+body {
+	margin: 0;
+	height: 100% !important ;
+	z-index: -1;
+}
+
+.bottomNavbar {
+    background-color: #FFFFFF;
+}
+
+.bottomNavbar ul {
+    line-height: .75em;
+    padding-left: 0;
+}
+
+.bottomNavbar ul li {
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    padding-left: 0;
+}
+
+.bottomNavbar ul li.bottomStatus:hover,
+.bottomNavbar ul li.bottomStatus div.bottomBarItem {
+    text-decoration: none;
+    color: #000;
+}
+
+.bottomNavbar ul li:hover {
+    text-decoration: underline;
+    color: #0066CC;
+}
+
+.bottomNavbar ul li a {
+    color: #18233E;
+}
+
+.bottomNavbar ul li:last-child {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.bottomNavbar ul li:last-child a {
+    color: #0066CC;
+}
+
+@media (min-width: 53.75em) {
+    .bottomNavbar ul {
+        padding-left: 1.4375em;
+    }
+
+    .bottomNavbar ul li {
+        display: inline;
+        padding-left: 1.25em;
+    }
+
+    .bottomNavbar ul li:last-child {
+        display: inline;
+        float: right;
+        padding-right: 1.4375em;
+    }
+}
+
+.developmentalReviewContainer {
+    margin: 2.5em 14%;
+    max-width: 56.25em;
+    min-width: 18em;
+    position: relative;
+}
+
+@media (min-width: 55.3125em) {
+    .developmentalReviewContainer {
+        margin: 2.5em 9%;
+    }
+}
+
+@media (min-width: 68.75em) {
+    .developmentalReviewContainer {
+        margin: 2.5em auto;
+    }
+}
+
+
+.developmentalReviewDividingLine {
+    border: 1px solid #C5C8CF;
+    margin-left: -2.5em;
+    width: 110%;
+}
+
+.editor-container {
+    border-bottom: 1px solid rgba(24, 35, 62, .3);
+    padding-bottom: 90px;
+    position: relative;
+    width: 100%;
+}
+
+.editor-container .editor {
+	display: block;
+    float: left;
+	outline: none;
+	pointer-events: all;
+    width: 100%;
+}
+
+.editor-container .editor .page {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(24, 35, 62, .3);
+	overflow:hidden;
+}
+
+.editor-container .editor .outer {
+	height: inherit;
+}
+
+.editor-container .editor .inner {
+    height: 100%;
+}
+
+#main #content .sticky {
+    font-family: montserratlight, sans-serif;
+}
+
+#main #content .sticky fieldset.postTitleBarItem .customSelect .SumoSelect p.CaptionCont span {
+    color: #666;
+}
+
+#main #content .sticky fieldset.postTitleBarItem .customSelect:hover .SumoSelect p.CaptionCont span {
+    color: #0066CC;
+    text-decoration: underline;
+}
+
+#main #content #peerReviewHeader {
+    font-family: montserratlight, sans-serif;
+    font-weight: 300;
+    padding: 2em 0;
+}
+
+#main #content #peerReviewHeader h1.postTitle {
+    color: #18233E;
+    font-size: 1.5em;
+}
+
+#main #content #peerReviewHeader h3.postAuthor {
+    color: #0066CC;
+    font-size: 0.75em;
+}
+
+#main #content #peerReviewHeader h3.postAuthor:hover {
+    text-decoration: underline;
+}
+
+
+#main #content #peerReviewEditorContent {
+}
+
+img {
+    max-width: 818px;
+    height: auto;
+}
+
+.inner-centered {
+	display: table;
+	margin: 0 auto;
+	background: #fff;
+}
+.outer-centered {
+	top: 100px;
+	width: 100%;
+}
+
+iframe {
+    overflow-y: hidden;
+}
+
+.foot {
+    font-family: montserratlight, sans-serif;
+}
+
+.wrapper {
+	position:relative;
+	min-width: 100%;
+}
+
+.media-content {
+	height: auto;
+	padding-bottom: 10px;
+	background: #eee;
+}
+
+.media-info {
+	text-align: center;
+}
+
+audio {
+	min-width: 818px;
+}
+
+.comment-container {
+	background: #eee;
+}
+
+#example_video_1 {
+	min-width: 818px;
+}
+
+.video-js {
+	height: 100%;
+}
+
+#rollback {
+	left: 181px;
+}
+
+.noshow {
+	display:none !important;
+}
+
+.sub-ib {
+	height: 30px;
+	margin-left: 0;
+	padding: 0 0 0 65px;
+	position: static;
+	right: 0;
+	top: 0;
+}
+
+.sb-sb {
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	border: 1px solid rgba(155,155,155,.57);
+	font-size: 1px;
+	height: 12px;
+	margin: 0 4px 0 1px;
+	outline: 0;
+	vertical-align: text-bottom;
+	width: 12px;
+	background: #fff;
+	position: relative;
+	display: inline-block;
+	cursor:pointer;
+	top: -2px;
+}
+
+.sb-p {
+	height: 15px;
+	outline: 0;
+	width: 15px;
+	left: 0;
+	position: relative;
+	top: -3px;
+}
+
+.sb-text {
+	color: #555;
+	cursor: pointer;
+	float: right;
+	font-size: 13px;
+	padding-left: 5px;
+	padding-top: 2px;
+}
+
+.priv-sb {
+	float: left;
+	display: none;
+	padding: 8px;
+}
+
+.editable {
+	cursor: text;
+	font: normal 13px/1.4 arial,sans-serif;
+	word-wrap: break-word;
+	outline: 0;
+	position: relative;
+	min-height: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.t {
+background: #96CDF2;
+height: 10px;
+width: 10px;
+left: -3px;
+position: relative;
+top: -3px;
+border-radius: 50%;
+margin: 4px;
+}
+
+/** Toggle original document view **/
+#originalEditor {
+    border: 1px solid rgba(24, 35, 62, .3);
+    display: none;
+}
+
+#originalEditor.dualReview {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 47%;
+}
+
+#reviewEditor.dualReview {
+    float: right;
+    width: 47%;
+}
+
+#docTitles {
+    display: none;
+    font-family: montserratlight, sans-serif;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+}
+
+#docTitles.dualReview {
+    display: block;
+    margin-top: -3.75em;
+}
+
+#originalDesc {
+    width: 47%;
+    float: left;
+}
+
+#reviewDesc {
+    width: 47%;
+    float: right;
+}
+
+/** End Toggle original document view **/
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background: #eee;
+    padding-top: 10px;
+    height: 90px;
+    width: 100%;
+}
+
+/** Toggle Sumoselect **/
+fieldset {
+	/*float: right;*/
+    border: none;
+    height: inherit;
+    overflow: hidden;
+	border-right: 1px solid rgba(24, 35, 62, .3);
+	border-left: 1px solid rgba(24, 35, 62, .3);
+}
+
+.SumoSelect > .CaptionCont > span {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.customSelect > .SumoSelect > .CaptionCont {
+}
+
+.SumoSelect > .optWrapper {
+    /*width: 170px;*/
+}
+
+.SumoSelect > .optWrapper.open {
+	top: 3.325em;
+}
+
+.SumoSelect > .CaptionCont > span.placeholder {
+    font-size: 12px !important;
+}
+/** End Toggle Sumoselect **/
+
+
+/** Set style for terms modal **/
+#seeTerms_box {
+	height: auto;
+}
+
+/** Set style for introduction modal **/
+#seeIntroduction_box {
+	height: auto;
+	width: 37.5em;
+}
+
+#seeIntroduction_box .seeIntroduction {
+box-shadow: 0 5px 20px 0 rgba(0,0,0,0.03);
+	border: 1px solid #C5C8CF;
+
+}
+
+#seeIntroduction_box .closer {
+	width: 45px;
+	height: 45px;
+	background-color: #FFFFFF;
+	border: 1px solid #C5C8CF;
+	right: -0.6em;
+	top: 0;
+}
+
+#seeIntroduction_box .seeIntroduction .modalHeading {
+	font-size: 1.375em;
+	padding: 1em 2em 2em 2em;
+	color: #18233E;
+	font-weight: 300;
+	background-color: #FFFFFF;
+	max-width: 23.2em;
+	line-height: 1.3em;
+	color: #18233E;
+}
+#seeIntroduction_box .seeIntroduction .modalCont {
+	font-size: 0.875em;
+	padding:5em 3em 3em 3em;
+}
+
+#seeIntroduction_box .seeIntroduction .continue-button,
+#acceptCompletedReview {
+	text-align:center;
+	height: 2.5em;
+	background-color: #3878c0;
+	box-shadow: 0 5px 20px 0 rgba(56,120,192,0.24);
+	border-radius: 100px;
+	cursor: pointer;
+	width: 95%;
+	padding-top: 1em;
+	margin-top: 2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#seeIntroduction_box .seeIntroduction .continue-button span,
+#acceptCompletedReview span {
+	font-size: 0.875em;
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.0625em;
+	color: #FFFFFF;
+	vertical-align:middle;
+}
+
+#peerReviewEditorContent #commentBox {
+    margin: 0 auto;
+    margin-top: 20%;
+    border-top: 1px solid rgba(24, 35, 62, .3);
+    padding-top: 90px;
+    position: relative;
+}
+
+.modalCont ul li {
+    color: #000000;
+    line-height: 30px;
+		margin-bottom: 22px;
+}
+
+.seeIntroduction .modalCont ul li {
+    line-height: 14px;
+}
+
+.editorIntro {
+    position: absolute;
+    left: 90px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3878c0;
+}
+
+.editorIntro:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .editorIntro {
+        display: none;
+    }
+    div#main.peerReview div.postTitleBar .editorIntroduction {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 48em) {
+    div#main.peerReview div.postTitleBar .editorIntroduction {
+        left: 2em;
+    }
+}
+
+
+.replyForm fieldset {
+    border: none;
+    padding: 0;
+    float: none;
+}
+
+.commentFeedback {
+    margin-top: 1px;
+}
+
+#anon {
+    color: #417cba;
+    padding: 8px;
+    background: #f5fafc;
+    border: 1px solid #acc7dd;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    vertical-align: bottom;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#anonLabel {
+    font-size: 13px;
+}
+
+/** End modal **/
